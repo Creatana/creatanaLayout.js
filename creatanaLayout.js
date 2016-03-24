@@ -12,14 +12,14 @@ function setParentHeight (elements, minWidth){
 		var elements=document.getElementsByClassName('parentheight');
 		var getNewHeight = false;
 	}
-	mediaQ = true;
+	var mediaQ = true;
 	for (var i=0;i<elements.length;i++){
 		elements[i].parentNode.staticHeight = false;
 	}
 	for (var i=0;i<elements.length;i++){
 		var classString = elements[i].getAttribute('class');
 		if(typeof(minWidth) == 'undefined'){
-			var mediaQ = /parentheight(?=[0-9])[0-9]/.test(classString);
+			mediaQ = /parentheight(?=[0-9])[0-9]/.test(classString);
 			if(mediaQ){
 				var minWidth = classString.match(/parentheight(?=[0-9])[0-9]*/)[0].match(/[0-9]*$/)[0];
 			}
